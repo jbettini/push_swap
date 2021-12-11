@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:39:19 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/11 19:57:03 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/11 20:04:25 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ t_list  *create_a(char **arg, int ac)
     while(arg[++i])
         ft_lstadd_back(&a, ft_lstnew(arg[i]));
     if (ac == 2)
-    {
         ft_free_split(arg);
-        arg = 0;
-    }
     return (a);
 }
 
