@@ -6,13 +6,13 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:25:12 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/09 15:14:11 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/11 00:57:21 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int         neg;
 	int         i;

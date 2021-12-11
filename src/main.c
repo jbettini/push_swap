@@ -6,17 +6,16 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:39:19 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/09 16:04:26 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/11 01:21:06 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
-# include <stdio.h>
+#include "push_swap.h"
 
 int main(int ac, char **av)
 {
-    if (ac > 1 && av[0])
+    if (ac > 1 && int_check(&av[1]))
     {
-        printf("%s", av[1]);
+
     }
 }

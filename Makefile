@@ -7,6 +7,7 @@ L_FT	=	libft
 LIB		=	-lft
 
 SRC		=	src/main.c	\
+			src/check.c	\
 
 OBJ		=	$(SRC:%.c=%.o)
 

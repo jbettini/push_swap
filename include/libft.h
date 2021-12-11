@@ -30,7 +30,7 @@ typedef struct s_list
 # define BUFFER_SIZE 1
 #endif
 
-int		ft_atoll(const char *str);
+long long		ft_atoll(const char *str);
 char	*get_next_line(int fd);
 int		ft_isin(char *str, int c);
 char	*ft_strjoin_gnl(char *save, char *buf);
