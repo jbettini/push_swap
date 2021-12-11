@@ -23,6 +23,7 @@ $(L_FT)/libft.a:
 	$(CC) $(CFLAGS) -o $@ -c $< -I$(I_DIR)
 
 clean:
+	make clean -C $(L_FT)
 	rm -f $(OBJ)
 
 fclean: clean
