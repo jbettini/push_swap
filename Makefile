@@ -8,19 +8,20 @@ LIB		=	-lft
 
 SRC		=	src/main.c	\
 			src/check.c	\
+			src/my_utils.c \
 
 OBJ		=	$(SRC:%.c=%.o)
 
 all: include/push_swap.h $(NAME)
 
 $(NAME): $(L_FT)/libft.a $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) -I$(I_DIR) -L$(L_DIR) $(LIB)
+	$(CC)  -o $(NAME) $(OBJ) -I$(I_DIR) -L$(L_DIR) $(LIB)
 
 $(L_FT)/libft.a:
 	make -C $(L_FT) && cp -rf $(L_FT)/libft.a lib
 
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $< -I$(I_DIR)
+	$(CC)  -o $@ -c $< -I$(I_DIR)
 
 clean:
 	make clean -C $(L_FT)

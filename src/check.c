@@ -34,16 +34,39 @@ int check_limits(char *arg)
     return (1);
 }
 
-int int_check(char **av)
+int check_double(char **arg)
+{
+    int i;
+    int j;
+
+    j = 0;
+    i = j + 1;
+    while (arg[j])
+    {
+        i = j + 1;
+        while (arg[i])
+        {
+            if (!ft_strcmp(arg[j], arg[i]))
+                return (0);
+            i++;
+        }
+        j++;
+    }
+    return (1);
+}
+
+int int_check(char **arg)
 {
     int i;
 
     i = 0;
-    while (av[i])
+    while (arg[i])
     {
-        if (!check_valid_num(av[i]))
+        if (!check_valid_num(arg[i]))
             return (0);
-        else if (!check_limits(av[i]))
+        else if (!check_limits(arg[i]))
+            return (0);
+        else if (!check_double(arg))
             return (0);
         i++;
     }
