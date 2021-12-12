@@ -21,13 +21,13 @@ size_t ft_double_strlen(char **arg)
     return (i);
 }
 
-void	ft_list_swap(t_list *a, t_list *b)
+void	ft_list_swap(t_list **a, t_list **b)
 {
-	t_list	x;
+	void *x;
 
-	x = *a;
-	*a = *b;
-	*b = x;
+    x = (*a)->content;
+	(*a)->content = (*b)->content;
+	(*b)->content = x;
 }
 
 void    ft_lstdel_content(void *content)
@@ -56,9 +56,11 @@ void    print_split(char **tab)
 void    print_nb_lst(t_list *lst)
 {
     int i = 0;
+   // printf("size %d\n", ft_lstsize(lst));
     while(lst)
     {
         printf("%d\n",ft_atoi(lst->content));
         lst = lst->next;
+        i++;
     }
 }

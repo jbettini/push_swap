@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:12:34 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 05:11:27 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 21:43:36 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void    swap_the_pile(t_list *pile, char *instruction)
 {
     if (pile && pile->next)
-        ft_list_swap(pile->content, pile->next->content);
+        ft_list_swap(&pile, &(pile->next));
     if (instruction != NULL)
         ft_putstr(instruction);
 }

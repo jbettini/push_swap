@@ -26,9 +26,9 @@ void    reverse_the_pile(t_list **pile, char *instruction);
 void    ft_lstdel_content(void *content);
 void    print_nb_lst(t_list *lst);
 void    ft_free_split(char **tab);
-size_t ft_double_strlen(char **arg);
+size_t  ft_double_strlen(char **arg);
 void    print_split(char **tab);
-void	ft_list_swap(t_list *a, t_list *b);
+void	ft_list_swap(t_list **a, t_list **b);
 
 #endif
 
