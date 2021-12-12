@@ -13,7 +13,7 @@ void    swap_the_pile(t_list *pile, char *instruction);
 void    swap_all_pile(t_list *a, t_list *b);
 void    push_swap(char **arg, int ac);
 t_list  *create_a(char **arg);
-void    push_top_pile(t_list *dst, t_list *src, char *instruction);
+void    push_top_pile(t_list **dst, t_list **src, char *instruction);
 void    rotate_the_pile(t_list **pile, char *instruction);
 void    reverse_the_pile(t_list **pile, char *instruction);
 

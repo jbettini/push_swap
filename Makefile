@@ -11,6 +11,7 @@ SRC		=	src/main.c	\
 			src/my_utils.c \
 			src/push_swap.c \
 			src/operation.c \
+			src/all.c \
 
 OBJ		=	$(SRC:%.c=%.o)
 

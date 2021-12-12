@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:12:34 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 04:21:43 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 05:11:27 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,22 @@ void    swap_the_pile(t_list *pile, char *instruction)
         ft_putstr(instruction);
 }
 
-void    swap_all_pile(t_list *a, t_list *b)
+void    push_top_pile(t_list **dst, t_list **src, char *instruction)
 {
-    swap_the_pile(a, NULL);
-    swap_the_pile(b, "ss\n");
-}
-/*
-void    push_top_pile(t_list *dst, t_list *src, char *instruction)
-{
-    if (src)
+    if (*src)
     {   
-        ft_lstadd_front(&src, dst);
+        t_list  *tmp;
+
+        tmp = ft_lstnew((*src)->content);
+        ft_lstadd_front(dst, tmp);
+        tmp = *src;
+        *src = (*src)->next;
+        tmp->content = NULL;
+        free(tmp);
+        tmp = NULL;
+        ft_putstr(instruction); 
     }
-    ft_putstr(instruction);
 }
-*/
 
 void    rotate_the_pile(t_list **pile, char *instruction)
 {
@@ -47,8 +48,8 @@ void    rotate_the_pile(t_list **pile, char *instruction)
         new = ft_lstnew(tmp->content);
         ft_lstadd_back(&tmp, new);
         *pile = tmp->next;
-        free(tmp);
         tmp->content = NULL;
+        free(tmp);
         tmp = NULL;
         if (instruction != NULL)
             ft_putstr(instruction);
@@ -78,10 +79,4 @@ void    reverse_the_pile(t_list **pile, char *instruction)
         if (instruction != NULL)
             ft_putstr(instruction);
     }
-}
-
-void    rotate_all_pile(t_list *a, t_list *b)
-{
-    rotate_the_pile(&a, NULL);
-    rotate_the_pile(&b, "rr\n");
 }
