@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:12:34 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 21:43:36 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:44:22 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void    swap_the_pile(t_list *pile, char *instruction)
 {
-    if (pile && pile->next)
-        ft_list_swap(&pile, &(pile->next));
-    if (instruction != NULL)
-        ft_putstr(instruction);
+    if (pile && pile->next && ft_lstsize(pile) > 0)
+    {
+        ft_swap_content(&pile, &(pile->next));
+        if (instruction != NULL)
+            ft_putstr(instruction);
+    }
 }
 
 void    push_top_pile(t_list **dst, t_list **src, char *instruction)
@@ -33,13 +35,15 @@ void    push_top_pile(t_list **dst, t_list **src, char *instruction)
         tmp->content = NULL;
         free(tmp);
         tmp = NULL;
-        ft_putstr(instruction); 
+        ft_putstr(instruction);
+        if (ft_lstsize(*src) == 0)
+            (*src) = NULL;
     }
 }
 
 void    rotate_the_pile(t_list **pile, char *instruction)
 {
-    if (pile)
+    if (*pile)
     {
         t_list  *tmp;
         t_list  *new;
@@ -51,14 +55,12 @@ void    rotate_the_pile(t_list **pile, char *instruction)
         tmp->content = NULL;
         free(tmp);
         tmp = NULL;
-        if (instruction != NULL)
-            ft_putstr(instruction);
     }
 }
 
 void    reverse_the_pile(t_list **pile, char *instruction)
 {
-    if (pile)
+    if (*pile)
     {
         t_list  *tmp;
         t_list  *tmp2;

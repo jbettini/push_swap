@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:09:58 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 21:13:27 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:49:13 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,8 @@ void    push_swap(char **arg, int ac)
 
     a = create_a(arg);
     b = NULL;
-    print_nb_lst(a);
-    printf("-------\n");
-    reverse_the_pile(&a, "rra\n");
-    print_nb_lst(a);
-    printf("-------\n");
-    rotate_the_pile(&a, "ra\n");
-    print_nb_lst(a);
-    printf("-------\n");
-    swap_the_pile(a, "sa\n");
-    print_nb_lst(a);
-    printf("----B---\n");
-    push_top_pile(&b, &a, "pb\n");
-    print_nb_lst(b);
-    printf(" --A-- \n"); 
-    print_nb_lst(a);
-    printf("---A---\n");
-    push_top_pile(&a, &b, "pa\n");
-    print_nb_lst(a);
-    printf(" --B-- \n"); 
-    print_nb_lst(b); 
+  //  if (ft_lstsize(a) <= 5 && ft_lstsize(a) >= 2 && !is_sorted(a))
+   //     small_sort(a);
     ft_lstclear(&a, ft_lstdel_content);
     ft_lstclear(&b, ft_lstdel_content);
 }
