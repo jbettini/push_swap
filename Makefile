@@ -9,6 +9,8 @@ LIB		=	-lft
 SRC		=	src/main.c	\
 			src/check.c	\
 			src/my_utils.c \
+			src/push_swap.c \
+			src/operation.c \
 
 OBJ		=	$(SRC:%.c=%.o)
 
