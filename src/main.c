@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 15:39:19 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 22:47:26 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:58:26 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ int main(int ac, char **av)
         if (ac == 2)
             ft_free_split(arg);
         ft_putstr_fd("Error", 2);
-        system("leaks Push_swap");
+  //      system("leaks Push_swap");
         return (0);
     }
     if (ac == 2)
-        ft_free_split(arg);
-    
-    system("leaks Push_swap");
+        ft_free_split(arg);  
+ //   system("leaks Push_swap");
     return (0);
 }

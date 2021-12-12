@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 22:16:58 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:06:56 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int check_valid_num(char *arg);
 int check_limits(char *arg);
 int int_check(char **arg);
 int check_double(char **arg);
+
+int is_sorted(t_list *lst);
 
 void    swap_the_pile(t_list *pile, char *instruction);
 void    swap_all_pile(t_list *a, t_list *b);

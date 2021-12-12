@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:04 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 22:20:57 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 22:58:55 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void    print_split(char **tab)
 void    print_nb_lst(t_list *lst)
 {
     int i = 0;
-    printf("size %d\n", ft_lstsize(lst));
     while(lst)
     {
         printf("%d\n",ft_atoi(lst->content));

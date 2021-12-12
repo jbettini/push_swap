@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:09:58 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 22:49:13 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/12 23:06:52 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ void    push_swap(char **arg, int ac)
 
     a = create_a(arg);
     b = NULL;
-  //  if (ft_lstsize(a) <= 5 && ft_lstsize(a) >= 2 && !is_sorted(a))
-   //     small_sort(a);
+    if (ft_lstsize(a) <= 5 && ft_lstsize(a) >= 2 && !is_sorted(a))
+   //     small_sort(a,b);
+    else if (ft_lstsize(a) >= 6 && !is_sorted(a))
+   //     big_sort(a, b);
     ft_lstclear(&a, ft_lstdel_content);
     ft_lstclear(&b, ft_lstdel_content);
 }
