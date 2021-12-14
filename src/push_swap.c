@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:09:58 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 23:32:01 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:33:27 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_list  *create_a(char **arg)
     return (a);
 }
 
+
+
 void    push_swap(char **arg, int ac)
 {
     t_list  *a;
@@ -31,16 +33,14 @@ void    push_swap(char **arg, int ac)
 
     a = create_a(arg);
     b = NULL;
- //   if (ft_lstsize(a) <= 5 && ft_lstsize(a) >= 2 && !is_sorted(a))
-   //     small_sort(a,b);
-    //else if (ft_lstsize(a) >= 6 && !is_sorted(a))
-   //     big_sort(a, b);
-   
-    if (is_sorted(a))
-        printf("is Sort\n");
-    else if (!is_sorted(a))
+   // print_nb_lst(a);
+    if (ft_lstsize(a) <= 5 && ft_lstsize(a) >= 2 && !is_sorted(a))
+        a = small_case(&a, &b);
+   // print_nb_lst(a);
+    if (!is_sorted(a))
         printf("is no Sort\n");
-
+    else 
+        printf("is Sort\n");
     ft_lstclear(&a, ft_lstdel_content);
     ft_lstclear(&b, ft_lstdel_content);
 }

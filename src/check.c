@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 23:00:43 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 23:00:45 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/13 21:49:49 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int is_sorted(t_list *lst)
     while(tmp->next)
     {
         tmp2 = tmp;
-        tmp = tmp->next;
+        tmp = tmp2->next;
         if (ft_atoi(tmp->content) < ft_atoi(tmp2->content))
             return (0);
     }

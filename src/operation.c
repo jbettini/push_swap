@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:12:34 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/12 22:44:22 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/14 00:29:58 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,22 @@ void    push_top_pile(t_list **dst, t_list **src, char *instruction)
 
 void    rotate_the_pile(t_list **pile, char *instruction)
 {
-    if (*pile)
+    if (*pile && (*pile)->next)
     {
         t_list  *tmp;
-        t_list  *new;
 
         tmp = *pile;
-        new = ft_lstnew(tmp->content);
-        ft_lstadd_back(&tmp, new);
         *pile = tmp->next;
-        tmp->content = NULL;
-        free(tmp);
-        tmp = NULL;
+        tmp->next = NULL;
+        ft_lstadd_back(pile, tmp);
+        if (instruction != NULL)
+            ft_putstr(instruction);
     }
 }
 
 void    reverse_the_pile(t_list **pile, char *instruction)
 {
-    if (*pile)
+    if (*pile && (*pile)->next)
     {
         t_list  *tmp;
         t_list  *tmp2;
