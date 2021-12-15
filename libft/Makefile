@@ -11,7 +11,7 @@ OBJS = ${SRCS:.c=.o}
 CFLAGS = -Wall -Wextra -Werror
 
 %.o: %.c
-		${CC} ${CFALGS} -o $@ -c $?
+		${CC} ${CFLAGS} -o $@ -c $?
 
 ${NAME}:	${OBJS}	
 			${AR} ${NAME} ${OBJS}

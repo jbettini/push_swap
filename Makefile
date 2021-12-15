@@ -1,6 +1,6 @@
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	Push_swap
+NAME	=	push_swap
 I_DIR	=	include
 L_DIR	=	lib
 L_FT	=	libft
