@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:09:58 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 06:47:21 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/15 17:48:21 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,48 +84,43 @@ int only_one(t_list *a, int i)
 {
     while(a)
     {
-        if (itb(ft_atoi(a->content)) / i == 0)
+        if (((ft_atoi((a)->content) >> i) & 1) == 0)
             return (0);
         a = a->next;
     }
     return (1);
 }
 
-int size_max(int nb)
+int max_bytes_len(int nb)
 {
     int i;
-    char *tmp;
 
-    tmp = ft_itoa_base(nb, "01");
-    nb = ft_atoi(tmp);
-    free(tmp);
-    i = 1;
-    while (nb != 0)
-    {
-        i *= 10;
-        nb /= 10;
-    }
-    i /= 10;
+    i = 0;
+    while ((nb >> i ) != 0) 
+        i++;
     return (i);
 }
 
 t_list  *ft_radix_sort(t_list **a, t_list **b)
 {
     int i;
+    int j;
+    int lst_size;
 
-    i = size_max(ft_lstsize(*a));
-    while (!is_sorted(*a) || ft_lstsize(*b) > 0 || i != 0)
+    lst_size = ft_lstsize(*a);
+    i = -1;
+    while (++i < max_bytes_len(ft_lstsize(*a)))
     {
-        while (itb(ft_atoi((*a)->content)) / i == 0)
-            push_top_pile(b, a, "pb\n");
-        while (itb(ft_atoi((*a)->content)) / i == 1 && !only_one(*a, i))
-            rotate_the_pile(a, "ra\n");
-        if (only_one(*a, i))
+        j = -1;
+        while (++j < lst_size && !only_one(*a, i))
         {
-            while (ft_lstsize(*b) > 0)
-                push_top_pile(a, b, "pa\n");
-            i /= 10;
+            if (((ft_atoi((*a)->content) >> i) & 1) == 0)
+                push_top_pile(b, a, "pb\n");
+            else
+                rotate_the_pile(a, "ra\n");
         }
+        while (ft_lstsize(*b) > 0)
+            push_top_pile(a, b, "pa\n");
     }
     return (*a);
 }
