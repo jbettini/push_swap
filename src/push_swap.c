@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 20:09:58 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 17:48:21 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/15 19:15:53 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,62 +24,6 @@ t_list  *create_a(char **arg)
     return (a);
 }
 
-void    insert_swap(char **arg)
-{
-    size_t i;
-    size_t pos;
-    int min;
-
-    i = 0;
-    pos = 0;
-    min = ft_atoi(arg[i]);
-    while(arg[i])
-    {
-        if (ft_atoi(arg[i]) < min)
-        {
-            min = ft_atoi(arg[i]);
-            ft_swap_str(&arg[0], &arg[i]);
-        }
-        i++;
-    }
-}
-
-char    **ft_sort_insert(char **arg)
-{
-    size_t  i;
-
-    i = -1;
-    while (arg[++i])
-        insert_swap(&arg[i]);
-    return (arg);
-}
-
-char    *index_pos(int nb, char **arg)
-{
-    int i;
-
-    i = -1;
-    while (arg[++i])
-    {
-        if (ft_atoi(arg[i]) == nb)
-            return (ft_itoa(i));
-    }
-    return (NULL);
-}
-
-t_list  *convert_to_pos(t_list  **a, char **arg)
-{
-    t_list  *tmp;
-
-    tmp = *a;
-    while (tmp)
-    {
-        tmp->content = index_pos(ft_atoi(tmp->content), arg);
-        tmp = tmp->next;
-    }
-    return (*a);
-}
-
 int only_one(t_list *a, int i)
 {
     while(a)
@@ -91,16 +35,6 @@ int only_one(t_list *a, int i)
     return (1);
 }
 
-int max_bytes_len(int nb)
-{
-    int i;
-
-    i = 0;
-    while ((nb >> i ) != 0) 
-        i++;
-    return (i);
-}
-
 t_list  *ft_radix_sort(t_list **a, t_list **b)
 {
     int i;
@@ -109,10 +43,10 @@ t_list  *ft_radix_sort(t_list **a, t_list **b)
 
     lst_size = ft_lstsize(*a);
     i = -1;
-    while (++i < max_bytes_len(ft_lstsize(*a)))
+    while (++i < ft_bytes_len(ft_lstsize(*a)))
     {
         j = -1;
-        while (++j < lst_size && !only_one(*a, i))
+        while (++j < lst_size)
         {
             if (((ft_atoi((*a)->content) >> i) & 1) == 0)
                 push_top_pile(b, a, "pb\n");

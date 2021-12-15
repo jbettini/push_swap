@@ -30,6 +30,15 @@ typedef struct s_list
 # define BUFFER_SIZE 1
 #endif
 
+
+int				ft_bytes_len(int nb);
+t_ull			ft_itb(int nb);
+void			ft_swap_str(char **a, char **b);
+void			ft_swap_content(t_list **a, t_list **b);
+size_t			ft_double_strlen(char **arg);
+void			ft_free_split(char **tab);
+int				ft_bytes_len(int nb);
+void			ft_lstdel_content(void *content);
 int				ft_atoi_base(const char *str, char *base);
 void			ft_void_swap(void *a, void *b);
 long long		ft_atoll(const char *str);

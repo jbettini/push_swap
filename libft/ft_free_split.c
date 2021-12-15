@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_utils.c                                         :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/12 21:47:04 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 18:49:28 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/15 18:17:43 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/15 18:21:33 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void    print_split(char **tab)
+void    ft_free_split(char **tab)
 {
-    int i = -1;
+    size_t  i;
+
+    i = -1;
     while(tab[++i])
-        printf("SPLIT %s\n", tab[i]);
-}
-
-void    print_nb_lst(t_list *lst)
-{
-    int i = 0;
-    while(lst)
-    {
-        printf("%d\n",ft_atoi(lst->content));
-        lst = lst->next;
-        i++;
-    }
+        free(tab[i]);
+    free(tab);
+    tab = 0;
 }

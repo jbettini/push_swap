@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 06:36:33 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/15 18:58:46 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ int     check_limits(char *arg);
 int     int_check(char **arg);
 int     check_double(char **arg);
 int     is_sorted(t_list *a);
-void    swap_the_pile(t_list *pile, char *instruction);
-void    swap_all_pile(t_list *a, t_list *b);
+
 void    push_swap(char **arg, int ac);
 t_list  *create_a(char **arg);
+
+void    swap_the_pile(t_list *pile, char *instruction);
+void    swap_all_pile(t_list *a, t_list *b);
 void    push_top_pile(t_list **dst, t_list **src, char *instruction);
 void    rotate_the_pile(t_list **pile, char *instruction);
 void    reverse_the_pile(t_list **pile, char *instruction);
@@ -55,14 +57,13 @@ t_list  *small_case(t_list **a, t_list **b);
 t_list  *do_small(t_list **a, t_list **b);
 t_list  *small_sort(t_list **a, t_list **b);
 
+void    insert_swap(char **arg);
+char    **ft_sort_insert(char **arg);
+char    *index_pos(int nb, char **arg);
+t_list  *convert_to_pos(t_list  **a, char **arg);
 
-void    ft_lstdel_content(void *content);
 void    print_nb_lst(t_list *lst);
-void    ft_free_split(char **tab);
-size_t  ft_double_strlen(char **arg);
 void    print_split(char **tab);
-void	ft_swap_content(t_list **a, t_list **b);
-void    ft_swap_str(char **a, char **b);
 
 #endif
 

@@ -8,12 +8,12 @@ LIB		=	-lft
 
 SRC		=	src/main.c	\
 			src/check.c	\
-			src/my_utils.c \
 			src/push_swap.c \
 			src/operation.c \
 			src/all.c \
 			src/small.c \
 			src/small_pt2.c \
+			src/big_position.c \
 
 OBJ		=	$(SRC:%.c=%.o)
 
