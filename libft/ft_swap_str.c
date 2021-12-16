@@ -6,17 +6,17 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:41:23 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 18:41:41 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:44:40 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_swap_str(char **a, char **b)
+void	ft_swap_str(char **a, char **b)
 {
-	char *x;
+	char	*x;
 
-    x = *a;
-	*a= *b;
+	x = *a;
+	*a = *b;
 	*b = x;
 }

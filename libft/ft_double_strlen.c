@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_double_strlen.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 18:22:22 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 18:22:30 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/16 16:39:01 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/16 16:39:13 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_double_strlen(char **arg)
+size_t	ft_double_strlen(char **arg)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    while(arg[i])
-        i++;
-    return (i);
+	i = 0;
+	while (arg[i])
+		i++;
+	return (i);
 }

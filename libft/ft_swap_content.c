@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 18:40:02 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 18:40:24 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:42:36 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_swap_content(t_list **a, t_list **b)
 {
-	void *x;
+	void	*x;
 
-    x = (*a)->content;
+	x = (*a)->content;
 	(*a)->content = (*b)->content;
 	(*b)->content = x;
 }

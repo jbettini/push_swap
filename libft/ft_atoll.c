@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 14:25:12 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/11 00:57:21 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:37:02 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long long	ft_atoll(const char *str)
 {
-	int         neg;
-	int         i;
+	int			neg;
+	int			i;
 	long long	res;
 
 	i = 0;

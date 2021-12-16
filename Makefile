@@ -2,9 +2,9 @@ CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	push_swap
 I_DIR	=	include
-L_DIR	=	lib
 L_FT	=	libft
 LIB		=	-lft
+A_LIB	=	libft
 
 SRC		=	src/main.c	\
 			src/check.c	\
@@ -20,21 +20,21 @@ OBJ		=	$(SRC:%.c=%.o)
 all: include/push_swap.h $(NAME)
 
 $(NAME): $(L_FT)/libft.a $(OBJ)
-	$(CC) -g -o $(NAME) $(OBJ) -I$(I_DIR) -L$(L_DIR) $(LIB)
+	$(CC) ${CFLAGS} -o $(NAME) $(OBJ) -I$(I_DIR) -L$(A_LIB) $(LIB)
 
 $(L_FT)/libft.a:
-	make -C $(L_FT) && cp -rf $(L_FT)/libft.a lib
+	make -C $(L_FT) 
 
 %.o: %.c
-	$(CC) -g -o $@ -c $< -I$(I_DIR)
+	$(CC) ${CFLAGS} -o $@ -c $< -I$(I_DIR)
 
 clean:
 	make clean -C $(L_FT)
-	rm -f $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
-	make fclean -C $(L_FT) && rm -f $(L_DIR)/libft.a
-	rm  -f $(NAME)
+	make fclean -C $(L_FT)
+	rm  -rf $(NAME)
 
 re: fclean all
 

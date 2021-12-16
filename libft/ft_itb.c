@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 18:42:10 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 18:42:31 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/16 16:40:26 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/16 16:41:05 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_ull ft_itb(int nb)
+t_ull	ft_itb(int nb)
 {
-    int i;
-    t_ull res;
-    int tmp[10];
+	int		i;
+	t_ull	res;
+	int		tmp[10];
 
-    res = 0;
-    i = 0;
-    while (nb)
-    {
-        tmp[i++] = nb % 2;
-        nb /= 2;
-    }
-    while (--i >= 0)
-    {
-        res *= 10;
-        res += tmp[i];
-    }
-    return (res);
+	res = 0;
+	i = 0;
+	while (nb)
+	{
+		tmp[i++] = nb % 2;
+		nb /= 2;
+	}
+	while (--i >= 0)
+	{
+		res *= 10;
+		res += tmp[i];
+	}
+	return (res);
 }

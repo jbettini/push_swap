@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/15 18:17:43 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/15 18:21:33 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/16 16:39:41 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/16 16:39:58 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_free_split(char **tab)
+void	ft_free_split(char **tab)
 {
-    size_t  i;
+	size_t	i;
 
-    i = -1;
-    while(tab[++i])
-        free(tab[i]);
-    free(tab);
-    tab = 0;
+	i = -1;
+	while (tab[++i])
+		free(tab[i]);
+	free(tab);
+	tab = 0;
 }

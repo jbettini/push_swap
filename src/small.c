@@ -5,74 +5,74 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 21:38:09 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/14 19:33:25 by jbettini         ###   ########.fr       */
+/*   Created: 2021/12/16 16:08:17 by jbettini          #+#    #+#             */
+/*   Updated: 2021/12/16 20:00:24 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int smallest_case(t_list *a)
+int	smallest_case(t_list *a)
 {
-    if (ft_atoi(A) > ft_atoi(NEXT) && ft_atoi(NEXT) < \
-            ft_atoi(ALAST) && ft_atoi(ALAST) > ft_atoi(A))
-        return (1);
-    if (ft_atoi(A) > ft_atoi(NEXT) && ft_atoi(NEXT) > \
-            ft_atoi(ALAST) && ft_atoi(ALAST) < ft_atoi(A))
-        return (2);
-    if (ft_atoi(A) > ft_atoi(NEXT) && ft_atoi(NEXT) < \
-            ft_atoi(ALAST) && ft_atoi(ALAST) < ft_atoi(A))
-        return (3);
-    if (ft_atoi(A) < ft_atoi(NEXT) && ft_atoi(NEXT) > \
-            ft_atoi(ALAST) && ft_atoi(ALAST) > ft_atoi(A))
-        return (4);
-    if (ft_atoi(A) < ft_atoi(NEXT) && ft_atoi(NEXT) > \
-            ft_atoi(ALAST) && ft_atoi(ALAST) < ft_atoi(A))
-        return (5);
-    if (is_sorted(a))
-        return (6);
-    return (0);
+	int	first;
+	int	between;
+	int	last;
+
+	first = ft_atoi(a->content);
+	between = ft_atoi(a->next->content);
+	last = ft_atoi((ft_lstlast(a))->content);
+	if (first > between && between < last && last > first)
+		return (1);
+	if (first > between && between > last && last < first)
+		return (2);
+	if (first > between && between < last && last < first)
+		return (3);
+	if (first < between && between > last && last > first)
+		return (4);
+	if (first < between && between > last && last < first)
+		return (5);
+	return (6);
 }
 
-t_list    *smallest_sort(t_list *a, t_list *b)
+t_list	*smallest_sort(t_list *a)
 {
-    int i;
+	int	i;
 
-    i = smallest_case(a);
-    while (!is_sorted(a))
-    {
-        if (i == 1)
-            SA
-        else if (i == 2)
-        {
-            SA
-            RRA
-        }
-        else if (i == 3)
-            RA
-        else if (i == 4)
-        {
-            SA
-            RA
-        }
-        else if (i == 5)
-            RRA
-    }
-    return (a);
+	i = smallest_case(a);
+	while (!is_sorted(a))
+	{
+		if (i == 1)
+			swap_the_pile(a, "sa\n");
+		else if (i == 2)
+		{
+			swap_the_pile(a, "sa\n");
+			reverse_the_pile(&a, "rra\n");
+		}
+		else if (i == 3)
+			rotate_the_pile(&a, "ra\n");
+		else if (i == 4)
+		{
+			swap_the_pile(a, "sa\n");
+			rotate_the_pile(&a, "ra\n");
+		}
+		else if (i == 5)
+			reverse_the_pile(&a, "rra\n");
+	}
+	return (a);
 }
 
-int get_position(int b, t_list *a)
+int	get_position(int b, t_list *a)
 {
-    int pos;
+	int	pos;
 
-    pos = 1;
-    while (a->next)
-    {
-        if (b > ft_atoi(a->content))
-            pos++;
-        a = a->next;
-    }
-    if (a->next == NULL && ft_atoi(ALAST) < b)
-        ++pos;
-    return (pos);
+	pos = 1;
+	while (a->next)
+	{
+		if (b > ft_atoi(a->content))
+			pos++;
+		a = a->next;
+	}
+	if (a->next == NULL && ft_atoi((ft_lstlast(a))->content) < b)
+		++pos;
+	return (pos);
 }

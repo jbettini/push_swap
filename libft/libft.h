@@ -6,7 +6,7 @@
 /*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 18:48:22 by jbettini          #+#    #+#             */
-/*   Updated: 2021/11/19 22:30:23 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/16 16:54:52 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 # include <fcntl.h>
 
-typedef unsigned long long t_ull;
+typedef unsigned long long	t_ull;
 typedef struct s_list
 {
 	void			*content;
@@ -26,10 +26,7 @@ typedef struct s_list
 }				t_list;
 
 # define FD_MAX 255
-#ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1
-#endif
-
 
 int				ft_bytes_len(int nb);
 t_ull			ft_itb(int nb);
