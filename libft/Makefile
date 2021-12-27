@@ -8,7 +8,7 @@ AR = ar rcs
 
 OBJS = ${SRCS:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 %.o: %.c
 		${CC} ${CFLAGS} -o $@ -c $?

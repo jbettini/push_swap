@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:16:14 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/16 20:01:53 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/27 03:05:55 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,13 @@ t_list	*small_sort(t_list **a, t_list **b)
 
 t_list	*small_case(t_list **a, t_list **b)
 {
-	if (ft_lstsize(*a) <= 3)
+	if (ft_lstsize(*a) == 3)
 		*a = smallest_sort(*a);
+	else if (ft_lstsize(*a) == 2)
+	{
+		if (ft_atoi((*a)->content) > ft_atoi((*a)->next->content))
+			swap_the_pile(*a, "sa\n");
+	}
 	else
 		*a = small_sort(a, b);
 	return (*a);

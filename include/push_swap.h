@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/16 20:00:33 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/27 10:41:32 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,28 @@
 # include "libft.h"
 # include <stdio.h>
 
-t_ull	itb(int nb);
+typedef struct s_cpt
+{
+	int	pa;
+	int	rb;
+	int	i;
+	int	med;
+	int	size;
+}				t_cpt;
+
+typedef struct s_tmp
+{
+	int	i;
+	int	med;
+	int	lst_size;
+	int	len_chunk;
+}				t_tmp;
+
+t_tmp	init_var(t_tmp *tmp, char **arg, t_list **a);
+int		get_med_value(char **arg);
+int		med_index(char **arg, int med);
+t_list	*make_chunk(t_list **a, t_list **b, char **arg);
+t_list	*get_size_chunk(t_list *b, t_list *med);
 int		check_valid_num(char *arg);
 int		check_limits(char *arg);
 int		int_check(char **arg);
