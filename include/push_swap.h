@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/27 10:41:32 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/28 06:18:24 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ typedef struct s_cpt
 	int	i;
 	int	med;
 	int	size;
+	int	allpa;
+	int	allsb;
+	int	allrrb;
+	int	allpb;
+	int	allrb;
+	int	allra;
 }				t_cpt;
 
 typedef struct s_tmp
@@ -32,6 +38,17 @@ typedef struct s_tmp
 	int	len_chunk;
 }				t_tmp;
 
+
+void	sort_second_chunk(int size, t_list **b, t_list **a);
+void	seconde_chunk_case_three(int size, int med, t_list **b, t_list **a);
+void	seconde_chunk_case_four(int size, int med, t_list **b, t_list **a);
+void	sort_top_of_a(t_list **a);
+void	sort_first_chunk(int size, t_list **b, t_list **a);
+t_list	*ft_radix_sort(t_list **a, t_list **b);
+int		get_med_chunk(t_list *b, int sizeofchunk);
+char	**chunk_to_array(t_list *b, int sizeofchunk);
+void	print_cpt(t_cpt cpt);
+void	init_cpt(t_cpt *cpt, int mode, int size);
 t_tmp	init_var(t_tmp *tmp, char **arg, t_list **a);
 int		get_med_value(char **arg);
 int		med_index(char **arg, int med);
@@ -61,7 +78,5 @@ void	insert_swap(char **arg);
 char	**ft_sort_insert(char **arg);
 char	*index_pos(int nb, char **arg);
 t_list	*convert_to_pos(t_list **a, char **arg);
-void	print_nb_lst(t_list *lst);
-void	print_split(char **tab);
 
 #endif

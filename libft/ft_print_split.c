@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbettini <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 14:41:51 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/25 14:41:56 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/28 02:30:01 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_print_split(char **split)
 	int	i;
 
 	i = 0;
+	if (split[0] == 0)
+		ft_putstr("empty double pointer\n");
 	while (split[i])
 	{
 		write(1, "str ", 4);

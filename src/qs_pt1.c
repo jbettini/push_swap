@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 09:57:33 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/27 09:58:13 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/28 08:22:20 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,20 @@ t_tmp	init_var(t_tmp *tmp, char **arg, t_list **a)
 		return (*tmp);
 }
 
+int	get_min_stack(t_list *b)
+{
+	int	i;
+
+	i = ft_atoi(b->content);
+	while (b)
+	{
+		if (ft_atoi(b->content) <= i)
+			i = ft_atoi(b->content);
+		b = b->next;
+	}
+	return (i);
+}
+
 t_list	*make_chunk(t_list **a, t_list **b, char **arg)
 {
 	t_tmp	tmp;
@@ -63,6 +77,7 @@ t_list	*make_chunk(t_list **a, t_list **b, char **arg)
 		ft_lstadd_front(&med_chunk, ft_lstnew(ft_itoa(tmp.med)));
 	}	
 	small_case(a, b);
+	ft_lstadd_back(&med_chunk, ft_lstnew(ft_itoa(get_min_stack(*b))));
 	return (med_chunk);
 }
 
@@ -84,9 +99,5 @@ t_list	*get_size_chunk(t_list *b, t_list *med)
 		med = med->next;
 		ft_lstadd_back(&size_chunk, ft_lstnew(ft_itoa(i)));
 	}
-	i = 1;
-	while (b && ++i)
-		b = b->next;
-	ft_lstadd_back(&size_chunk, ft_lstnew(ft_itoa(i - 1)));
 	return (size_chunk);
 }
