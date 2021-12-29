@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/28 06:18:24 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/29 07:46:01 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,21 @@ typedef struct s_tmp
 }				t_tmp;
 
 
-void	sort_second_chunk(int size, t_list **b, t_list **a);
-void	seconde_chunk_case_three(int size, int med, t_list **b, t_list **a);
-void	seconde_chunk_case_four(int size, int med, t_list **b, t_list **a);
-void	sort_top_of_a(t_list **a);
-void	sort_first_chunk(int size, t_list **b, t_list **a);
+// void	sort_second_chunk(int size, t_list **b, t_list **a);
+// void	seconde_chunk_case_three(int size, int med, t_list **b, t_list **a);
+// void	seconde_chunk_case_four(int size, int med, t_list **b, t_list **a);
+// void	sort_top_of_a(t_list **a);
+// void	sort_first_chunk(int size, t_list **b, t_list **a);
+// int		get_med_chunk(t_list *b, int sizeofchunk);
+// char	**chunk_to_array(t_list *b, int sizeofchunk);
+// void	print_cpt(t_cpt cpt);
+// void	init_cpt(t_cpt *cpt, int mode, int size);
+// t_tmp	init_var(t_tmp *tmp, char **arg, t_list **a);
+// int		get_med_value(char **arg);
+// int		med_index(char **arg, int med);
+// t_list	*make_chunk(t_list **a, t_list **b, char **arg);
+// t_list	*get_size_chunk(t_list *b, t_list *med);
 t_list	*ft_radix_sort(t_list **a, t_list **b);
-int		get_med_chunk(t_list *b, int sizeofchunk);
-char	**chunk_to_array(t_list *b, int sizeofchunk);
-void	print_cpt(t_cpt cpt);
-void	init_cpt(t_cpt *cpt, int mode, int size);
-t_tmp	init_var(t_tmp *tmp, char **arg, t_list **a);
-int		get_med_value(char **arg);
-int		med_index(char **arg, int med);
-t_list	*make_chunk(t_list **a, t_list **b, char **arg);
-t_list	*get_size_chunk(t_list *b, t_list *med);
 int		check_valid_num(char *arg);
 int		check_limits(char *arg);
 int		int_check(char **arg);
