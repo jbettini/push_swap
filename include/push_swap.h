@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/29 07:46:01 by jbettini         ###   ########.fr       */
+/*   Updated: 2022/01/02 05:43:01 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,30 @@
 typedef struct s_cpt
 {
 	int	pa;
+	int	pb;
 	int	rb;
+	int	ra;
 	int	i;
 	int	med;
 	int	size;
-	int	allpa;
-	int	allsb;
-	int	allrrb;
-	int	allpb;
-	int	allrb;
-	int	allra;
 }				t_cpt;
 
-typedef struct s_tmp
-{
-	int	i;
-	int	med;
-	int	lst_size;
-	int	len_chunk;
-}				t_tmp;
+void	del_chunk_sorted(t_list **lst, int to_del);
 
+// qs_utils
+int		get_min_stack(t_list *b);
+int		get_med_value(char **arg);
+void	reroll_the_chunk(t_list **lst, int size, char *instruction);
+void	sort_top_of_a(t_list **a);
+void	sort_top_chunk(t_list **a, t_list **b, t_list **size_chunk);
 
-// void	sort_second_chunk(int size, t_list **b, t_list **a);
-// void	seconde_chunk_case_three(int size, int med, t_list **b, t_list **a);
-// void	seconde_chunk_case_four(int size, int med, t_list **b, t_list **a);
-// void	sort_top_of_a(t_list **a);
-// void	sort_first_chunk(int size, t_list **b, t_list **a);
-// int		get_med_chunk(t_list *b, int sizeofchunk);
-// char	**chunk_to_array(t_list *b, int sizeofchunk);
-// void	print_cpt(t_cpt cpt);
-// void	init_cpt(t_cpt *cpt, int mode, int size);
-// t_tmp	init_var(t_tmp *tmp, char **arg, t_list **a);
-// int		get_med_value(char **arg);
-// int		med_index(char **arg, int med);
-// t_list	*make_chunk(t_list **a, t_list **b, char **arg);
-// t_list	*get_size_chunk(t_list *b, t_list *med);
+//qs_first chunk
+int		get_med_chunk(t_list *b, int sizeofchunk);
+void	sort_first_chunk(int size, t_list **b, t_list **a);
+void	sort_second_chunk(int size, t_list **b, t_list **a);
+void	seconde_chunk_case_four(int size, int med, t_list **b, t_list **a);
+void	seconde_chunk_case_three(int size, int med, t_list **b, t_list **a);
+
 t_list	*ft_radix_sort(t_list **a, t_list **b);
 int		check_valid_num(char *arg);
 int		check_limits(char *arg);

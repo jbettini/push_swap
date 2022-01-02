@@ -14,6 +14,8 @@ SRC		=	src/main.c	\
 			src/small.c \
 			src/small_pt2.c \
 			src/big_position.c \
+			src/qs_utils.c \
+			src/qs_first_chunk.c \
 
 OBJ		=	$(SRC:%.c=%.o)
 

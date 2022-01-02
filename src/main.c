@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:01:40 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/28 02:58:01 by jbettini         ###   ########.fr       */
+/*   Updated: 2022/01/02 06:21:01 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 		}
 		if (ac == 2)
 			ft_free_split(arg);
-//		system("leaks push_swap");
+		// system("leaks push_swap");
 	}
 	return (0);
 }

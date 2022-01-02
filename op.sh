@@ -1,0 +1,3 @@
+#!/bin/bash
+
+make && ./push_swap `ruby -e "puts (1..500).to_a.shuffle.join(' ')"` > outfile && echo "all : " && wc -l outfile && echo "rra : " && grep -x "rra" outfile | wc -l && echo "ra : " && grep -x "ra" outfile | wc -l && echo "pa : " && grep -x "pa" outfile | wc -l && echo "pb : " && grep -x "pb" outfile | wc -l && echo "rb : " && grep -x "rb" outfile | wc -l && echo "rrb : " && grep -x "rrb" outfile | wc -l && echo "sa : " && grep -x "sa" outfile | wc -l && echo "sb : " && grep -x "sb" outfile | wc -l && grep -x "is Sort" outfile && grep -x "is no Sort" outfile

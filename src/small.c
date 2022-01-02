@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:08:17 by jbettini          #+#    #+#             */
-/*   Updated: 2021/12/16 20:00:24 by jbettini         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:06:37 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	smallest_case(t_list *a)
 
 	first = ft_atoi(a->content);
 	between = ft_atoi(a->next->content);
-	last = ft_atoi((ft_lstlast(a))->content);
+	last = ft_atoi(a->next->next->content);
 	if (first > between && between < last && last > first)
 		return (1);
 	if (first > between && between > last && last < first)
