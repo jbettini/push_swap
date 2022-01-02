@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 16:05:53 by jbettini          #+#    #+#             */
-/*   Updated: 2022/01/02 05:42:43 by jbettini         ###   ########.fr       */
+/*   Updated: 2022/01/02 09:46:56 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	sort_top_chunk(t_list **a, t_list **b, t_list **size_chunk)
 	tmp = *size_chunk;
 	sort_first_chunk(ft_atoi(tmp->content), b, a);
 	tmp = tmp->next;
-	sort_second_chunk(ft_atoi(tmp->content), b, a);
+	sort_second_chunk(ft_atoi(tmp->content), b, a); // opti ??
 	del_chunk_sorted(size_chunk, 2);
 }
 

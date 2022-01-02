@@ -6,7 +6,7 @@
 /*   By: jbettini <jbettini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 21:47:13 by jbettini          #+#    #+#             */
-/*   Updated: 2022/01/02 05:43:01 by jbettini         ###   ########.fr       */
+/*   Updated: 2022/01/02 09:34:43 by jbettini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,19 @@ typedef struct s_cpt
 	int	size;
 }				t_cpt;
 
+// init
+
+void	b_to_a_init(t_cpt *cpt, int size, t_list **b);
+void	a_to_b_init(t_cpt *cpt, int size, t_list **a);
+void	make_chunk_init(t_cpt *cpt, t_list *a, char **arg);
+void	remake_init(t_cpt *cpt, t_list **a, t_list **b, int size);
+
+// qs_chunk
 void	del_chunk_sorted(t_list **lst, int to_del);
+t_list	*make_chunk(t_list **a, t_list **b, char **arg);
+int		b_to_a(t_list **a, t_list **b, t_list **size_chunk);
+void	a_to_b(t_list **a, t_list **b, t_list **size_chunk, int new_chunk_size);
+void	remake_chunk(t_list **a, t_list **b, t_list **size_chunk);
 
 // qs_utils
 int		get_min_stack(t_list *b);
